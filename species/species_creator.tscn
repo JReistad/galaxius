@@ -1,0 +1,192 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb5pjlpn2ugq2"]
+
+[ext_resource type="Script" path="res://species/species_creator.gd" id="1_kooj5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_elcm6"]
+
+[node name="SpeciesCreator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kooj5")
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuBar"]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Species Information Tab" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+text = "Species Information"
+
+[node name="Species Attributes Tab" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+text = "Species Attributes"
+
+[node name="Species Appearance Tab" type="Button" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+text = "Species Appearance"
+
+[node name="SpeciesInformation" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 631.0
+offset_bottom = 647.0
+
+[node name="SpeciesNameTextEdit" type="TextEdit" parent="SpeciesInformation"]
+layout_mode = 2
+placeholder_text = "Species Name"
+
+[node name="BaseElementLabel" type="Label" parent="SpeciesInformation"]
+layout_mode = 2
+text = "Base Element"
+
+[node name="BaseElementOptionButton" type="OptionButton" parent="SpeciesInformation"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Carbon"
+popup/item_0/id = 0
+popup/item_1/text = "Silicon"
+popup/item_1/id = 1
+
+[node name="ReproductiveTypeLabel" type="Label" parent="SpeciesInformation"]
+layout_mode = 2
+text = "Reproductive Type"
+
+[node name="ReproductiveTypeOptionButton" type="OptionButton" parent="SpeciesInformation"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Sexual"
+popup/item_0/id = 0
+popup/item_1/text = "Asexual"
+popup/item_1/id = 1
+
+[node name="SpeciesAttributes" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 78.0
+offset_right = 635.0
+offset_bottom = 645.0
+
+[node name="Label" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Intelligence"
+
+[node name="HSlider" type="HSlider" parent="SpeciesAttributes"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Agility"
+
+[node name="HSlider2" type="HSlider" parent="SpeciesAttributes"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Charisma"
+
+[node name="HSlider3" type="HSlider" parent="SpeciesAttributes"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Stength"
+
+[node name="HSlider4" type="HSlider" parent="SpeciesAttributes"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Durability"
+
+[node name="HSlider5" type="HSlider" parent="SpeciesAttributes"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Species Attributes"
+
+[node name="Label7" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "Unassigned Points"
+
+[node name="Label8" type="Label" parent="SpeciesAttributes"]
+layout_mode = 2
+text = "500"
+
+[node name="SpeciesAppearance" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 78.0
+offset_right = 635.0
+offset_bottom = 645.0
+
+[node name="Label" type="Label" parent="SpeciesAppearance"]
+layout_mode = 2
+text = "Head"
+
+[node name="HSlider" type="HSlider" parent="SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="SpeciesAppearance"]
+layout_mode = 2
+text = "Body
+"
+
+[node name="HSlider2" type="HSlider" parent="SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="SpeciesAppearance"]
+layout_mode = 2
+text = "Arms"
+
+[node name="HSlider3" type="HSlider" parent="SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="SpeciesAppearance"]
+layout_mode = 2
+text = "Legs"
+
+[node name="HSlider4" type="HSlider" parent="SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="SpeciesAppearance"]
+layout_mode = 2
+text = "Feet"
+
+[node name="HSlider5" type="HSlider" parent="SpeciesAppearance"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 106.0
+offset_right = 1149.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+mesh = SubResource("CapsuleMesh_elcm6")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.53907)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.960167, 0.279427, 0, -0.279427, 0.960167, 0, 1.61738, 3.66147)
+
+[connection signal="pressed" from="MenuBar/HBoxContainer/Species Information Tab" to="." method="_on_species_information_tab_pressed"]
+[connection signal="pressed" from="MenuBar/HBoxContainer/Species Attributes Tab" to="." method="_on_species_attributes_tab_pressed"]
+[connection signal="pressed" from="MenuBar/HBoxContainer/Species Appearance Tab" to="." method="_on_species_appearance_tab_pressed"]
