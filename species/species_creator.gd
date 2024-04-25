@@ -5,12 +5,18 @@ var species_attributes
 var species_appearance
 var humanizer
 var humanizer_skins_options
+var registry
 
 func _ready():
 	species_information = $SpeciesInformation
 	species_attributes = $SpeciesAttributes
-	species_appearance = $SpeciesAppearance
+	species_appearance = $ScrollContainer
 	humanizer = $SubViewportContainer/SubViewport/Humanizer
+	registry = HumanizerRegistry
+	for body_parts in registry.body_parts.values():
+		for body_part in body_parts.values():
+			humanizer.set_body_part(body_part)
+			break
 	#var body_parts = []
 	#var leftEye = HumanBodyPart.new()
 	#leftEye.slot = 'LeftEye'

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb5pjlpn2ugq2"]
+[gd_scene load_steps=8 format=3 uid="uid://bb5pjlpn2ugq2"]
 
 [ext_resource type="Script" path="res://species/species_creator.gd" id="1_kooj5"]
 [ext_resource type="Script" path="res://addons/humanizer/scripts/humanizer.gd" id="2_sweol"]
@@ -6,17 +6,8 @@
 [ext_resource type="Script" path="res://addons/humanizer/scripts/resources/human_config.gd" id="3_nqpdi"]
 [ext_resource type="Script" path="res://species/viewer.gd" id="3_s5n5d"]
 [ext_resource type="PackedScene" uid="uid://csan8bknfmodc" path="res://addons/humanizer/data/animations/animation_tree.tscn" id="4_inr4f"]
-[ext_resource type="Resource" uid="uid://dh3gvafav3m0w" path="res://addons/humanizer/data/assets/body_parts/Eyes/Eyeballs/LeftEyeBall-LowPoly.tres" id="5_voa5p"]
-[ext_resource type="Resource" uid="uid://tncte6s3pj8s" path="res://addons/humanizer/data/assets/body_parts/Eyebrows/Eyebrows-005/RightEyebrow-005.tres" id="6_amcs6"]
-[ext_resource type="Resource" uid="uid://dbtugyk1hxx1p" path="res://addons/humanizer/data/assets/body_parts/Eyebrows/Eyebrows-005/LeftEyebrow-005.tres" id="8_aas31"]
-[ext_resource type="Resource" uid="uid://kdeo0l1w00ud" path="res://addons/humanizer/data/assets/body_parts/Eyelashes/normal_eyelashes/RightEyelash.tres" id="8_tl3p8"]
-[ext_resource type="Resource" uid="uid://cwqom0v1livdg" path="res://addons/humanizer/data/assets/body_parts/Eyelashes/normal_eyelashes/LeftEyelash.tres" id="9_j83kh"]
-[ext_resource type="Resource" uid="uid://dxamoo1p46ssw" path="res://addons/humanizer/data/assets/body_parts/Hair/long01/Long01.tres" id="10_dxl5b"]
-[ext_resource type="Resource" uid="uid://dy7tp48kvor2v" path="res://addons/humanizer/data/assets/body_parts/Tongue/tongue01/HumanTongue.tres" id="11_pcthm"]
-[ext_resource type="Resource" uid="uid://cjx3pk1td0bnk" path="res://addons/humanizer/data/assets/body_parts/Teeth/basic_teeth/Teeth01.tres" id="12_1c27h"]
-[ext_resource type="Resource" uid="uid://b73rbwq3w0ds3" path="res://addons/humanizer/data/assets/body_parts/Eyes/Eyeballs/RightEyeball-LowPoly.tres" id="13_6jtiu"]
 
-[sub_resource type="Resource" id="Resource_bp8lb"]
+[sub_resource type="Resource" id="Resource_4lxp1"]
 script = ExtResource("3_nqpdi")
 rig = "game_engine-RETARGETED"
 shapekeys = {
@@ -601,33 +592,13 @@ shapekeys = {
 "weight": 0.5
 }
 components = [&"lod"]
-body_parts = {
-"Hair": ExtResource("10_dxl5b"),
-"LeftEye": ExtResource("5_voa5p"),
-"LeftEyebrow": ExtResource("8_aas31"),
-"LeftEyelash": ExtResource("9_j83kh"),
-"RightEye": ExtResource("13_6jtiu"),
-"RightEyebrow": ExtResource("6_amcs6"),
-"RightEyelash": ExtResource("8_tl3p8"),
-"Teeth": ExtResource("12_1c27h"),
-"Tongue": ExtResource("11_pcthm")
-}
-body_part_materials = {
-"Hair": "long01_diffuse.png",
-"LeftEye": "eyeball_albedo.png",
-"LeftEyebrow": "eyebrow005.png",
-"LeftEyelash": "eyelashes02.png",
-"RightEye": "eyeball_albedo.png",
-"RightEyebrow": "eyebrow005.png",
-"RightEyelash": "eyelashes03.png",
-"Teeth": "teeth.png",
-"Tongue": "tongue01_diffuse.png"
-}
+body_parts = {}
+body_part_materials = {}
 clothes = []
 clothes_materials = {}
 skin_color = Color(1, 1, 1, 1)
 eye_color = Color(0.529412, 0.807843, 0.921569, 1)
-hair_color = Color(0.113725, 0, 0, 1)
+hair_color = Color(0.501961, 0, 0, 1)
 
 [node name="SpeciesCreator" type="Control"]
 layout_mode = 3
@@ -845,7 +816,7 @@ render_target_update_mode = 4
 
 [node name="Humanizer" type="Node3D" parent="SubViewportContainer/SubViewport"]
 script = ExtResource("2_sweol")
-human_config = SubResource("Resource_bp8lb")
+human_config = SubResource("Resource_4lxp1")
 _baked_root_node = "CharacterBody3D"
 atlas_resolution = 2048
 _animator_scene = ExtResource("4_inr4f")
