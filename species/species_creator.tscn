@@ -826,3 +826,5 @@ transform = Transform3D(1, 0, 0, 0, 0.960167, 0.279427, 0, -0.279427, 0.960167, 
 [connection signal="pressed" from="MenuBar/HBoxContainer/Species Appearance Tab" to="." method="_on_species_appearance_tab_pressed"]
 [connection signal="item_selected" from="SpeciesAppearance/HumanizerSkinsOptions" to="." method="_on_humanizer_skins_options_item_selected"]
 [connection signal="color_changed" from="SpeciesAppearance/SkinColorPicker" to="." method="_on_skin_color_picker_color_changed"]
+[connection signal="mouse_entered" from="SubViewportContainer" to="SubViewportContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SubViewportContainer" to="SubViewportContainer" method="_on_mouse_exited"]

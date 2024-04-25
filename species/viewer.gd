@@ -1,9 +1,13 @@
 extends SubViewportContainer
 
+var entered = false
+
 func _ready():
 	set_process_input(true)
 
 func _input(event):
+	if not entered:
+		return
 	if event is InputEventMouseMotion and event.button_mask & MOUSE_BUTTON_MASK_LEFT:
 		# Calculate rotation
 		var delta = event.relative
@@ -29,3 +33,11 @@ func _input(event):
 		var new_scale = $SubViewport/Humanizer.scale + Vector3(zoom_direction, zoom_direction, zoom_direction)
 		new_scale = new_scale.clamp(Vector3.ONE, Vector3.INF)  # Clamp to prevent negative scale
 		$SubViewport/Humanizer.scale = new_scale
+
+
+
+func _on_mouse_entered():
+	entered = true
+
+func _on_mouse_exited():
+	entered = false

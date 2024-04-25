@@ -38,6 +38,5 @@ func _on_species_appearance_tab_pressed():
 func _on_humanizer_skins_options_item_selected(index):
 	humanizer.set_skin_texture($SpeciesAppearance/HumanizerSkinsOptions.get_item_text(index))
 
-
 func _on_skin_color_picker_color_changed(color):
 	humanizer.skin_color = color
