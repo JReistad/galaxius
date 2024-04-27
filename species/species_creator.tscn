@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://species/viewer.gd" id="3_s5n5d"]
 [ext_resource type="PackedScene" uid="uid://csan8bknfmodc" path="res://addons/humanizer/data/animations/animation_tree.tscn" id="4_inr4f"]
 
-[sub_resource type="Resource" id="Resource_4lxp1"]
+[sub_resource type="Resource" id="Resource_ihdqm"]
 script = ExtResource("3_nqpdi")
 rig = "game_engine-RETARGETED"
 shapekeys = {
@@ -591,13 +591,14 @@ shapekeys = {
 "universal-male-young-minmuscle-minweight": 0,
 "weight": 0.5
 }
-components = [&"lod"]
+components = [&"lod", &"main_collider"]
 body_parts = {}
 body_part_materials = {}
 clothes = []
 clothes_materials = {}
 skin_color = Color(1, 1, 1, 1)
 eye_color = Color(0.529412, 0.807843, 0.921569, 1)
+eyebrow_color = Color(0, 0, 0, 1)
 hair_color = Color(0.501961, 0, 0, 1)
 
 [node name="SpeciesCreator" type="Control"]
@@ -795,11 +796,88 @@ text = "Skin Color"
 [node name="SkinColorPicker" type="ColorPicker" parent="ScrollContainer/SpeciesAppearance"]
 layout_mode = 2
 
+[node name="Hair Style" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Hair Style"
+
+[node name="HairStyleOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
 [node name="Hair Color" type="Label" parent="ScrollContainer/SpeciesAppearance"]
 layout_mode = 2
 text = "Hair Color"
 
 [node name="HairColorPicker" type="ColorPicker" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Left Eye" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Left Eye"
+
+[node name="LeftEyeOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Right Eye" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Right Eye"
+
+[node name="RightEyeOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Eye Color" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Eye Color"
+
+[node name="EyeColorPicker" type="ColorPicker" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Left Eye Brow" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Left Eye Brow"
+
+[node name="LeftEyeBrowOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Right Eye Brow" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Right Eye Brow"
+
+[node name="RightEyeBrowOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Eye Brow Color" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Eye Brow Color"
+
+[node name="EyeBrowColorPicker" type="ColorPicker" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Left Eye Lash" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Left Eye Lash"
+
+[node name="LeftEyeLashOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Right Eye Lash" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Right Eye Lash"
+
+[node name="RightEyeLashOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Tongue" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Tongue"
+
+[node name="TongueOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+
+[node name="Teeth" type="Label" parent="ScrollContainer/SpeciesAppearance"]
+layout_mode = 2
+text = "Teeth"
+
+[node name="TeethOptions" type="OptionButton" parent="ScrollContainer/SpeciesAppearance"]
 layout_mode = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -816,7 +894,7 @@ render_target_update_mode = 4
 
 [node name="Humanizer" type="Node3D" parent="SubViewportContainer/SubViewport"]
 script = ExtResource("2_sweol")
-human_config = SubResource("Resource_4lxp1")
+human_config = SubResource("Resource_ihdqm")
 _baked_root_node = "CharacterBody3D"
 atlas_resolution = 2048
 _animator_scene = ExtResource("4_inr4f")
@@ -838,6 +916,17 @@ transform = Transform3D(1, 0, 0, 0, 0.960167, 0.279427, 0, -0.279427, 0.960167, 
 [connection signal="pressed" from="MenuBar/HBoxContainer/Species Appearance Tab" to="." method="_on_species_appearance_tab_pressed"]
 [connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/HumanizerSkinsOptions" to="." method="_on_humanizer_skins_options_item_selected"]
 [connection signal="color_changed" from="ScrollContainer/SpeciesAppearance/SkinColorPicker" to="." method="_on_skin_color_picker_color_changed"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/HairStyleOptions" to="." method="_on_hair_style_options_item_selected"]
 [connection signal="color_changed" from="ScrollContainer/SpeciesAppearance/HairColorPicker" to="." method="_on_hair_color_picker_color_changed"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/LeftEyeOptions" to="." method="_on_left_eye_options_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/RightEyeOptions" to="." method="_on_right_eye_options_item_selected"]
+[connection signal="color_changed" from="ScrollContainer/SpeciesAppearance/EyeColorPicker" to="." method="_on_eye_color_picker_color_changed"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/LeftEyeBrowOptions" to="." method="_on_left_eye_brow_options_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/RightEyeBrowOptions" to="." method="_on_right_eye_brow_options_item_selected"]
+[connection signal="color_changed" from="ScrollContainer/SpeciesAppearance/EyeBrowColorPicker" to="." method="_on_eye_brow_color_picker_color_changed"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/LeftEyeLashOptions" to="." method="_on_left_eye_lash_options_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/RightEyeLashOptions" to="." method="_on_right_eye_lash_options_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/TongueOptions" to="." method="_on_tongue_options_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/TeethOptions" to="." method="_on_teeth_options_item_selected"]
 [connection signal="mouse_entered" from="SubViewportContainer" to="SubViewportContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SubViewportContainer" to="SubViewportContainer" method="_on_mouse_exited"]

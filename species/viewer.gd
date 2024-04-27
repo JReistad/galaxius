@@ -13,10 +13,10 @@ func _input(event):
 		var delta = event.relative
 		var rotation_speed = 0.5  # Adjust rotation speed as needed
 		
-		var rotation = Vector3(-delta.y, 0, 0) * rotation_speed
+		var rotation = Vector3(delta.y, 0, 0) * rotation_speed
 		# Determine dominant axis of mouse movement
 		if abs(delta.x) > abs(delta.y):
-			rotation = Vector3(0, -delta.x, 0) * rotation_speed
+			rotation = Vector3(0, delta.x, 0) * rotation_speed
 		# Apply rotation to mesh
 		$SubViewport/Humanizer.rotation_degrees += rotation
 	elif event is InputEventMouseMotion and event.button_mask & MOUSE_BUTTON_MASK_RIGHT:
