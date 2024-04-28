@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cxmncasxn2jgh"]
+
+[ext_resource type="Texture2D" uid="uid://kqbjd2yq0l72" path="res://data/humans/MyHuman/LeftEyebrow-005_albedo.res" id="1_4oej7"]
+[ext_resource type="Texture2D" uid="uid://dmwdrnhskxwbf" path="res://data/humans/MyHuman/LeftEyebrow-005_normal.res" id="2_l0p8g"]
+
+[resource]
+transparency = 4
+cull_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+albedo_color = Color(0.180392, 0.0862745, 0.378039, 1)
+albedo_texture = ExtResource("1_4oej7")
+normal_enabled = true
+normal_texture = ExtResource("2_l0p8g")

@@ -98,3 +98,12 @@ func _on_tongue_options_item_selected(index):
 
 func _on_teeth_options_item_selected(index):
 	humanizer.set_body_part(registry.body_parts['Teeth'][$ScrollContainer/SpeciesAppearance/TeethOptions.get_item_text(index)])
+
+func _on_save_pressed():
+	humanizer.save_human_scene(true)
+
+func _on_species_name_text_edit_text_set():
+	humanizer.human_name = $SpeciesInformation/SpeciesNameTextEdit.text
+
+func _on_species_name_text_edit_text_changed():
+	humanizer.human_name = $SpeciesInformation/SpeciesNameTextEdit.text

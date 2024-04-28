@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cerg0i0v5oout"]
+
+[ext_resource type="Texture2D" uid="uid://bgy0mq1jo4ihb" path="res://data/humans/MyHuman/LeftEyeBall-LowPoly_albedo.res" id="1_cmntd"]
+
+[resource]
+albedo_texture = ExtResource("1_cmntd")

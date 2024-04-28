@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8o6lrulflmnp"]
+
+[ext_resource type="Texture2D" uid="uid://dkfqvnhwh1263" path="res://data/humans/MyHuman/RightEyelash_albedo.res" id="1_whnce"]
+
+[resource]
+transparency = 4
+cull_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+albedo_texture = ExtResource("1_whnce")

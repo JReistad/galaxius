@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bb5pjlpn2ugq2"]
+[gd_scene load_steps=17 format=3 uid="uid://bb5pjlpn2ugq2"]
 
 [ext_resource type="Script" path="res://species/species_creator.gd" id="1_kooj5"]
 [ext_resource type="Script" path="res://addons/humanizer/scripts/humanizer.gd" id="2_sweol"]
@@ -6,6 +6,15 @@
 [ext_resource type="Script" path="res://addons/humanizer/scripts/resources/human_config.gd" id="3_nqpdi"]
 [ext_resource type="Script" path="res://species/viewer.gd" id="3_s5n5d"]
 [ext_resource type="PackedScene" uid="uid://csan8bknfmodc" path="res://addons/humanizer/data/animations/animation_tree.tscn" id="4_inr4f"]
+[ext_resource type="Resource" uid="uid://b73rbwq3w0ds3" path="res://addons/humanizer/data/assets/body_parts/Eyes/Eyeballs/RightEyeball-LowPoly.tres" id="5_8m83t"]
+[ext_resource type="Resource" uid="uid://dh3gvafav3m0w" path="res://addons/humanizer/data/assets/body_parts/Eyes/Eyeballs/LeftEyeBall-LowPoly.tres" id="6_genec"]
+[ext_resource type="Resource" uid="uid://tncte6s3pj8s" path="res://addons/humanizer/data/assets/body_parts/Eyebrows/Eyebrows-005/RightEyebrow-005.tres" id="7_yoj4c"]
+[ext_resource type="Resource" uid="uid://dbtugyk1hxx1p" path="res://addons/humanizer/data/assets/body_parts/Eyebrows/Eyebrows-005/LeftEyebrow-005.tres" id="8_tmotr"]
+[ext_resource type="Resource" uid="uid://kdeo0l1w00ud" path="res://addons/humanizer/data/assets/body_parts/Eyelashes/normal_eyelashes/RightEyelash.tres" id="9_0swi1"]
+[ext_resource type="Resource" uid="uid://cwqom0v1livdg" path="res://addons/humanizer/data/assets/body_parts/Eyelashes/normal_eyelashes/LeftEyelash.tres" id="10_31w2d"]
+[ext_resource type="Resource" uid="uid://dxamoo1p46ssw" path="res://addons/humanizer/data/assets/body_parts/Hair/long01/Long01.tres" id="11_5k3m2"]
+[ext_resource type="Resource" uid="uid://dy7tp48kvor2v" path="res://addons/humanizer/data/assets/body_parts/Tongue/tongue01/HumanTongue.tres" id="12_cpa1r"]
+[ext_resource type="Resource" uid="uid://cjx3pk1td0bnk" path="res://addons/humanizer/data/assets/body_parts/Teeth/basic_teeth/Teeth01.tres" id="13_bjbu2"]
 
 [sub_resource type="Resource" id="Resource_ihdqm"]
 script = ExtResource("3_nqpdi")
@@ -30,6 +39,14 @@ shapekeys = {
 "asian-male-child": 0,
 "asian-male-old": 0.0555556,
 "asian-male-young": 0.111111,
+"asym-brown-1-l": 1.0,
+"asym-brown-1-r": 1.0,
+"asym-brown-2-l": 1.0,
+"asym-brown-2-r": 1.0,
+"asym-top-1-l": 1.0,
+"asym-top-1-r": 1.0,
+"asym-top-2-l": 1.0,
+"asym-top-2-r": 1.0,
 "caucasian": 0.333,
 "caucasian-female-baby": 0,
 "caucasian-female-child": 0,
@@ -385,7 +402,42 @@ shapekeys = {
 "female-young-minmuscle-minweight-minheight": 0,
 "female-young-minmuscle-minweight-uncommonproportions": 0,
 "firmness": 0.5,
+"forehead-nubian-decr": 1.0,
+"forehead-nubian-incr": 1.0,
+"forehead-scale-vert-decr": 1.0,
+"forehead-scale-vert-incr": 1.0,
+"forehead-temple-decr": 1.0,
+"forehead-temple-incr": 1.0,
+"forehead-trans-backward": 1.0,
+"forehead-trans-forward": 1.0,
 "gender": 0.5,
+"head-age-decr": 1.0,
+"head-age-incr": 1.0,
+"head-angle-in": 1.0,
+"head-angle-out": 1.0,
+"head-back-scale-depth-decr": 1.0,
+"head-back-scale-depth-incr": 1.0,
+"head-diamond": 1.0,
+"head-fat-decr": 1.0,
+"head-fat-incr": 1.0,
+"head-invertedtriangular": 1.0,
+"head-oval": 1.0,
+"head-rectangular": 1.0,
+"head-round": 1.0,
+"head-scale-depth-decr": 1.0,
+"head-scale-depth-incr": 1.0,
+"head-scale-horiz-decr": 1.0,
+"head-scale-horiz-incr": 1.0,
+"head-scale-vert-decr": 1.0,
+"head-scale-vert-incr": 1.0,
+"head-square": 1.0,
+"head-trans-backward": 1.0,
+"head-trans-down": 1.0,
+"head-trans-forward": 1.0,
+"head-trans-in": 1.0,
+"head-trans-out": 1.0,
+"head-trans-up": 1.0,
+"head-triangular": 1.0,
 "height": 0.5,
 "male-baby-averagemuscle-averageweight-maxheight": 0,
 "male-baby-averagemuscle-averageweight-minheight": 0,
@@ -592,14 +644,35 @@ shapekeys = {
 "weight": 0.5
 }
 components = [&"lod", &"main_collider"]
-body_parts = {}
-body_part_materials = {}
+body_parts = {
+"Hair": ExtResource("11_5k3m2"),
+"LeftEye": ExtResource("6_genec"),
+"LeftEyebrow": ExtResource("8_tmotr"),
+"LeftEyelash": ExtResource("10_31w2d"),
+"RightEye": ExtResource("5_8m83t"),
+"RightEyebrow": ExtResource("7_yoj4c"),
+"RightEyelash": ExtResource("9_0swi1"),
+"Teeth": ExtResource("13_bjbu2"),
+"Tongue": ExtResource("12_cpa1r")
+}
+body_part_materials = {
+"Hair": "long01_diffuse.png",
+"LeftEye": "eyeball_albedo.png",
+"LeftEyebrow": "eyebrow005.png",
+"LeftEyelash": "eyelashes03.png",
+"RightEye": "eyeball_albedo.png",
+"RightEyebrow": "eyebrow005.png",
+"RightEyelash": "eyelashes01.png",
+"Teeth": "teeth.png",
+"Tongue": "tongue01_diffuse.png",
+"skin": "old_caucasian_male"
+}
 clothes = []
 clothes_materials = {}
-skin_color = Color(1, 1, 1, 1)
-eye_color = Color(0.529412, 0.807843, 0.921569, 1)
-eyebrow_color = Color(0, 0, 0, 1)
-hair_color = Color(0.501961, 0, 0, 1)
+skin_color = Color(0.847656, 0.0695343, 0.817261, 1)
+eye_color = Color(0.385099, 0.102173, 0.726562, 1)
+eyebrow_color = Color(0.180392, 0.0862745, 0.378039, 1)
+hair_color = Color(0.45098, 0.215686, 0.945098, 1)
 
 [node name="SpeciesCreator" type="Control"]
 layout_mode = 3
@@ -634,13 +707,13 @@ layout_mode = 2
 text = "Species Appearance"
 
 [node name="SpeciesInformation" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_top = 78.0
 offset_right = 631.0
 offset_bottom = 647.0
 
 [node name="SpeciesNameTextEdit" type="TextEdit" parent="SpeciesInformation"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 placeholder_text = "Species Name"
 
@@ -723,6 +796,7 @@ layout_mode = 2
 text = "500"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 174.0
 offset_top = 49.0
@@ -893,9 +967,11 @@ handle_input_locally = false
 render_target_update_mode = 4
 
 [node name="Humanizer" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.79705)
 script = ExtResource("2_sweol")
 human_config = SubResource("Resource_ihdqm")
 _baked_root_node = "CharacterBody3D"
+_character_script = "res://character/character_controller.gd"
 atlas_resolution = 2048
 _animator_scene = ExtResource("4_inr4f")
 _render_layers = 1
@@ -911,9 +987,17 @@ transform = Transform3D(1, 0, 0, 0, 0.994427, 0.105431, 0, -0.105431, 0.994427, 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.960167, 0.279427, 0, -0.279427, 0.960167, 0, 1.61738, 3.66147)
 
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Save"
+
 [connection signal="pressed" from="MenuBar/HBoxContainer/Species Information Tab" to="." method="_on_species_information_tab_pressed"]
 [connection signal="pressed" from="MenuBar/HBoxContainer/Species Attributes Tab" to="." method="_on_species_attributes_tab_pressed"]
 [connection signal="pressed" from="MenuBar/HBoxContainer/Species Appearance Tab" to="." method="_on_species_appearance_tab_pressed"]
+[connection signal="text_changed" from="SpeciesInformation/SpeciesNameTextEdit" to="." method="_on_species_name_text_edit_text_changed"]
+[connection signal="text_set" from="SpeciesInformation/SpeciesNameTextEdit" to="." method="_on_species_name_text_edit_text_set"]
 [connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/HumanizerSkinsOptions" to="." method="_on_humanizer_skins_options_item_selected"]
 [connection signal="color_changed" from="ScrollContainer/SpeciesAppearance/SkinColorPicker" to="." method="_on_skin_color_picker_color_changed"]
 [connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/HairStyleOptions" to="." method="_on_hair_style_options_item_selected"]
@@ -930,3 +1014,4 @@ transform = Transform3D(1, 0, 0, 0, 0.960167, 0.279427, 0, -0.279427, 0.960167, 
 [connection signal="item_selected" from="ScrollContainer/SpeciesAppearance/TeethOptions" to="." method="_on_teeth_options_item_selected"]
 [connection signal="mouse_entered" from="SubViewportContainer" to="SubViewportContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SubViewportContainer" to="SubViewportContainer" method="_on_mouse_exited"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

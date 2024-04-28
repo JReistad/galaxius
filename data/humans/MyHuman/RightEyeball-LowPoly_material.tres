@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ckevy0r8eqeuf"]
+
+[ext_resource type="Texture2D" uid="uid://c3b3ht363k7pn" path="res://data/humans/MyHuman/RightEyeball-LowPoly_albedo.res" id="1_miy48"]
+
+[resource]
+albedo_texture = ExtResource("1_miy48")
